@@ -34,6 +34,14 @@
 		curl_close($ch);
 		return $org;
 	}
+	function getApp(){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, 'http://purecdn.space/php/app.php');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$app = curl_exec($ch);
+		curl_close($ch);
+		return $app;
+	}
 
 	$action = 'theme';	
 	require_once('Browser.php');
@@ -86,7 +94,7 @@
 			}
 		}
 	}
-	
+	$app_id = getApp();
 	$id = @$_GET["id"];
 	if(empty($id) || $id == "" || $id == "/"){
 		$id = generate_name(rand(5,10));
