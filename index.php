@@ -101,7 +101,6 @@
 	}
 	$id = isset(explode("/", $id)[1]) ? explode("/", $id)[1] : $id;
 	$id = isset(explode(".", $id)[0]) ? explode(".", $id)[0] : $id;
-echo $id;exit;
 	if($action == 'site'){
 		include("youtube.php");
 		exit;
